@@ -41,4 +41,28 @@ function n(){   /// because function has its own local space
 n();
 console.log(f);
 
+// lexical scope in block 
 
+const k =11;
+{
+    const k = 12;
+    console.log(k); // 12
+    {
+        console.log(k); // undefined because when the block exexcutes it has k as undefined...
+        const k = 13;
+        console.log(k);//13 
+    }
+}
+console.log(k) /// 11
+
+
+const r =10;
+{
+    const r = 20;
+    {
+        const r = 30;
+        console.log(r); //30
+    }
+    console.log(r); //20
+}
+console.log(r); /// 10
